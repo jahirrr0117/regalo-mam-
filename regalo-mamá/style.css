@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* VIEWPORT */
+html, body {
+  height: 100%;
+}
+
+/* FONDO */
+body {
+  font-family: 'Segoe UI', system-ui, Arial, sans-serif;
+  background: linear-gradient(135deg, #ffd1dc, #ffe8f0);
+  overflow-x: hidden;
+  color: #7a003c;
+}
+
+/* CORAZONES */
+.corazon {
+  position: fixed;
+  bottom: -24px;
+  color: rgba(255, 90, 130, 0.75);
+  font-size: 18px;
+  animation: flotar 9s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes flotar {
+  from { transform: translateY(0); opacity: 1; }
+  to   { transform: translateY(-120vh); opacity: 0; }
+}
+
+/* PANTALLAS */
+.pantalla {
+  display: none;
+  min-height: 100vh;
+  padding: 16px;
+}
+
+.pantalla.activa {
+  display: grid;
+  place-items: center;
+  animation: fadeUp .8s ease;
+}
+
+/* TARJETA */
+.pantalla > * {
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255,255,255,.9);
+  border-radius: 22px;
+  padding: 22px 18px 26px;
+  box-shadow: 0 18px 40px rgba(0,0,0,.18);
+}
+
+/* TEXTOS */
+h1 {
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+p {
+  font-size: 1.02rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* IMAGEN */
+img {
+  display: block;
+  width: 100%;
+  max-height: 45vh;
+  object-fit: cover;
+  margin: 14px auto;
+  border-radius: 16px;
+  box-shadow: 0 14px 28px rgba(0,0,0,.28);
+}
+
+/* BOTÓN */
+button {
+  width: 100%;
+  margin-top: 14px;
+  padding: 14px 0;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #ff5f8a, #ff3d6a);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 10px 22px rgba(255,77,109,.45);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* ANIMACIÓN */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
